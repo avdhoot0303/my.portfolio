@@ -38,6 +38,8 @@ jobs:
       run: npm ci
 
     - run: npm run build --if-present
+      env:
+        CI: false  # Disable treating warnings as errors
 
     - name: Authenticate to Google Cloud
       uses: google-github-actions/auth@v1
@@ -50,4 +52,4 @@ jobs:
         version: 'latest'
 
     - name: Deploy to Google Cloud Storage
-      run: gsutil -m rsync -r dist/ gs://YOUR_BUCKET_NAME
+      run: gsutil -m rsync -r dist/ gs://awwdudee-portfolio
