@@ -20,8 +20,8 @@ const App = () => {
 
   return (
     <Layout style={{ minHeight: '100vh' }}>
-      {/* // <Content  theme = {'light'} style={{ margin: '0 16px'  }} > */}
-        <div id="home" style={{ padding: 24, minHeight: 360, background: '#FFF9C4', alignItems: 'center' }}>
+      <Content  theme = {'light'} style={{ margin: '0 16px'  }} >
+        <div id="home" style={{ padding: 24, minHeight: 360, background: '#ffffffd', alignItems: 'center' }}>
           <Row gutter={[16, 16]}>
             <Col xs={24} md={8}>
               <WelcomeCard  />
@@ -32,8 +32,8 @@ const App = () => {
 
           </Row>
         </div>
-      {/* // </Content> */}
-      <Footer  />
+      </Content>
+      {/* <Footer  /> */}
      </Layout>
   );
 };
