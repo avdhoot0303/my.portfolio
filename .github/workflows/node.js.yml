@@ -28,12 +28,6 @@ jobs:
     - run: rm -rf node_modules package-lock.json
     - run: npm install
 
-    - name: Print Node.js Version
-      run: node -v
-
-    - name: Print NPM Version
-      run: npm -v
-
     - name: Install Dependencies
       run: npm ci
 
