@@ -31,7 +31,7 @@ const TabbedCard = () => {
   };
 
   return (
-    <Card bordered = {false} hoverable = {true} style={{ height: '100%', borderRadius:'18px', background: '#FFFDE7'  }}>
+    <Card bordered = {false} hoverable = {true} style={{ height: '100%', borderRadius:'18px', background: '#F6F5F2'  }}>
       <Tabs activeKey={activeTab} onChange={handleTabChange}>
         <TabPane tab="Projects" key="1">
           <ScrollableContent className={animationClass}>

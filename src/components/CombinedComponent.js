@@ -28,7 +28,7 @@ const TimelineItemWrapper = styled.div`
   &:hover {
     transform: scale(1.03);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    border-color: black; /* Change to desired hover border color */
+    border-color: #7AA2E3; /* Change to desired hover border color */
   }
 `;
 
@@ -39,14 +39,10 @@ const educationItems = [
     logo: StonyBrookLogo, // Use imported logo
     description: (
       <>
-        <p>
+       <b> <p>
           <Avatar src={StonyBrookLogo} size="large" style={{ marginRight: 10 }} />
           Stony Brook University
-        </p>
-        <ul>
-          <li>Published research paper on machine learning</li>
-          <li>Awarded scholarship for academic excellence</li>
-        </ul>
+        </p></b>
       </>
     ),
     dot: <BookOutlined />,
@@ -57,14 +53,11 @@ const educationItems = [
     logo: NeosoftLogo, // Use imported logo
     description: (
       <>
-        <p>
+        <b><p>
           <Avatar src={NeosoftLogo} size="large" style={{ marginRight: 8 }} />
           Neosoft Technologies
-        </p>
-        <ul>
-          <li>Worked on machine learning projects</li>
-          <li>Developed cloud-based solutions</li>
-        </ul>
+        </p></b>
+
       </>
     ),
     dot: <LaptopOutlined />,
@@ -76,14 +69,11 @@ const educationItems = [
     logo: TechMahindraLogo, // Use imported logo
     description: (
       <>
+      <b>
         <p>
           <Avatar src={TechMahindraLogo} size="large" style={{ marginRight: 8 }} />
           Tech Mahindra
-        </p>
-        <ul>
-          <li>Worked on software development</li>
-          <li>Participated in national coding competition</li>
-        </ul>
+        </p></b>
       </>
     ),
     dot: <LaptopOutlined />,
@@ -95,14 +85,10 @@ const educationItems = [
     logo: MumbaiUniversityLogo, // Use imported logo
     description: (
       <>
-        <p>
+       <b> <p>
           <Avatar src={MumbaiUniversityLogo} size="large" style={{ marginRight: 8 }} />
           University of Mumbai
-        </p>
-        <ul>
-          <li>Internship at leading tech company</li>
-          <li>Participated in national coding competition</li>
-        </ul>
+        </p></b>
       </>
     ),
     dot: <BookOutlined />,
@@ -113,14 +99,11 @@ const educationItems = [
     logo: PravinPatilLogo, // Use imported logo
     description: (
       <>
+      <b>
         <p>
           <Avatar src={PravinPatilLogo} size="large" style={{ marginRight: 8 }} />
           Pravin Patil Polytechnic
-        </p>
-        <ul>
-          <li>Top student in graduating class</li>
-          <li>Project showcased at state-level science fair</li>
-        </ul>
+        </p></b>
       </>
     ),
     dot: <BookOutlined />,
@@ -128,36 +111,22 @@ const educationItems = [
 ];
 
 const achievementsItems = [
+  ,
   {
-    children: 'Best Paper Award at XYZ Conference',
-    date: '2024',
-    dot: <TrophyOutlined />,
-  },
-  {
-    children: 'Recipient of ABC Fellowship',
-    date: '2023',
-    dot: <TrophyOutlined />,
-  },
-  {
-    children: 'Top Innovator in DEF Competition',
+    children: 'Rewarded Employee of the Month Twice for best performance and Client experience',
     date: '2022',
     dot: <TrophyOutlined />,
   },
   {
-    children: 'Deep Learning Techniques in AI - Published in IEEE Transactions',
-    date: '2024',
+    children: 'Malware Detection of Portable executables using ML and CNN techniques ',
+    date: '2021',
     dot: <TrophyOutlined />,
   },
   {
-    children: 'Blockchain and its Applications - Published in Springer',
-    date: '2023',
+    children: 'Won Recursion Hackathon at RGIT (Mumbai) - IOT plant monitoring system problem',
+    date: '2020',
     dot: <TrophyOutlined />,
-  },
-  {
-    children: 'Advancements in Data Science - Published in Elsevier',
-    date: '2022',
-    dot: <TrophyOutlined />,
-  },
+  }
 ];
 
 const TimelineSection = ({ title, items }) => (

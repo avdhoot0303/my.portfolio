@@ -1,7 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { List, Avatar, Image, Typography, Divider } from 'antd';
-import image1 from '../assets/images/WaveRED.jpg';
+import image1 from '../assets/images/Photo 2192.jpg';
+import image2 from '../assets/images/Manhattan IMG 1585.jpg';
+import image3 from '../assets/images/Photo 0927.jpg';
+import image4 from '../assets/images/Photo 1663.jpg';
+import image5 from '../assets/images/Photo 1898.jpg';
+
 
 const { Title } = Typography;
 
@@ -26,16 +31,13 @@ const MusicPlaylist = styled.div`
 `;
 
 const photos = [
-  image1,
-  'https://via.placeholder.com/150',
-  'https://via.placeholder.com/150',
-  'https://via.placeholder.com/150',
+  image1, image2, image3, image4, image5
 ];
 
 const PersonalSpace = () => (
   <Container>
     <Divider>
-      <Title level={2}>Photo Gallery</Title>
+      <Title level={2}>Some captures by me</Title>
     </Divider>
     <PhotoGallery>
       {photos.map((src, index) => (
@@ -44,7 +46,7 @@ const PersonalSpace = () => (
     </PhotoGallery>
 
     <Divider>
-      <Title level={2}>Music Playlist</Title>
+      <Title level={2}>My fuel for work</Title>
     </Divider>
     <MusicPlaylist>
     <iframe 

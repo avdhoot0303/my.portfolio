@@ -31,6 +31,11 @@ const IconWrapper = styled.div`
     color: inherit;
     display: flex;
     align-items: center;
+    transition: transform 0.3s ease; /* Add transition for smooth effect */
+  }
+
+  & > a:hover {
+    transform: scale(2.1); /* Scale up the icon on hover */
   }
 
   & > a:hover svg {
@@ -40,23 +45,20 @@ const IconWrapper = styled.div`
   svg {
     width: 24px;
     height: 24px;
-    transition: fill 0.3s;
+    transition: fill 0.1s, transform 0.1s; /* Add transition for color and transform */
   }
 `;
 
+
 const ScheduleButton = styled(Button)`
   margin-top: 16px;
-  background-color: #8866de;
-  color: #ffffff;
+  background-color: #B0DAFF;
+  color: black;
   border: none;
   border-radius: 18px;
   display: flex;
   justify-content: center; /* Center the button horizontally */
   align-items: center;
-
-  &:hover {
-    background-color: #c4d6ff;
-  }
 `;
 
 const CardContent = styled.div`
@@ -125,7 +127,7 @@ const WelcomeCard = () => {
   };
 
   return (
-    <Card bordered={false} hoverable={true} style={{ height: '100%', alignItems: 'center', borderRadius: '18px', background: '#FFFDE7' }} className="drop-in">
+    <Card bordered={false} hoverable={true} style={{ height: '100%', alignItems: 'center', borderRadius: '18px', background: '#F6F5F2' }} className="drop-in">
       <CardContent>
         <CardTitle ref={nameRef} data-value="Avdhoot Patil">Avdhoot Patil</CardTitle>
         <img
@@ -134,7 +136,7 @@ const WelcomeCard = () => {
           style={{ width: '65%', borderRadius: '6px', marginBottom: '12px' }}
         />
         <p className="typed-out drop-in-2">
-          <span>Another Internet Guy <br /></span>
+          <b><span>Just Another Internet Guy <br /></span></b>
           Hi there! I'm{' '}
           <span data-value="Avdhoot Patil">
             Avdhoot Patil
@@ -150,13 +152,13 @@ const WelcomeCard = () => {
           <a href="https://github.com/avdhoot0303" target="_blank" rel="noopener noreferrer">
             <GithubIcon />
           </a>
-          <a href="https://www.instagram.com/your-instagram" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/awwdudee_" target="_blank" rel="noopener noreferrer">
             <InstagramIcon />
           </a>
           <a href="mailto:avdhootpatil245@gmail.com" target="_blank" rel="noopener noreferrer">
             <EmailIcon />
           </a>
-          <a href="https://discord.com/users/your-discord" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.kaggle.com/awwdudee" target="_blank" rel="noopener noreferrer">
             <KaggleIcon />
           </a>
         </IconWrapper>

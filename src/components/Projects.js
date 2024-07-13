@@ -81,13 +81,22 @@ const Projects = () => {
     },
     {
       key: 'project5',
-      label: 'Project 5',
-      description: 'Description of Project 5',
+      label: 'awwdudee space',
+      description: 'This is the portfolio that you\'re currently viewing. It\'s built using react and ant design component library',
       appLink: 'https://example.com/app5',
       githubLink: 'https://github.com/project5',
-      category: 'Backend',
-      technologies: ['Java', 'Spring Boot', 'MySQL'],
+      category: 'Frontend',
+      technologies: ['JavaScript', 'React'],
     },
+    {
+      key: 'project5',
+      label: 'GitHub actions for React application',
+      description: 'This is the portfolio that you\'re currently viewing. It\'s built using react and ant design component library',
+      appLink: 'https://example.com/app5',
+      githubLink: 'https://github.com/project5',
+      category: 'DevOps',
+      technologies: ['Google Cloud Platform','CICD','GitHub Actions','JavaScript', 'React'],
+    }
     // Add more projects as needed
   ];
 
@@ -117,7 +126,7 @@ const Projects = () => {
                   </ProjectDescription>
                   <div style={{ marginTop: '8px', marginBottom: '10px' }}>
                     {project.technologies.map((tech, index) => (
-                      <Tag color= '#7000bf' style={{ marginRight: '4px', marginBottom: '6px'}}  key={index}>{tech}</Tag>
+                      <Tag color= '#B0DAFF' style={{ marginRight: '4px', marginBottom: '6px', color: 'black'}}  key={index}>{tech}</Tag>
                     ))}
                   </div>
                   <Button
