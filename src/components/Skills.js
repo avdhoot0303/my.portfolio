@@ -22,56 +22,105 @@ import reactIcon from '../assets/React.svg'
 import dockerIcon from '../assets/Docker.svg'
 import terraformIcon from '../assets/HashiCorp Terraform.svg'
 import nginxIcon from '../assets/NGINX.svg'
+import javaIcon from '../assets/Java.svg'
+import redisIcon from '../assets/Redis.svg'
+import RIcon from '../assets/R.svg'
+import javascript from '../assets/JavaScript.svg'
+import mysql from '../assets/MySQL.svg'
+import kafkaicon from '../assets/Apache Kafka.svg'
+import istioIcon from '../assets/images/Simpleicons-Team-Simple-Istio.svg'
+import grpcIcon from '../assets/logos--grpc.svg'
+import elasticStack from '../assets/elastic-stack.svg'
+import langchainIcon from '../assets/Langchain--Streamline-Simple-Icons.svg'
+import sparkIcon from '../assets/apache-spark-5.svg'
+
+
+
+
 
 // Define the skills with their respective categories
 const skills = {
-  frontEnd: [
-    // Add front-end skills here if you have any
-    { name: 'React', icon: reactIcon },
-  ],
-  
-  CICD: [
-    
-  ],
-  Languages_and_frameworks: [
-    { name: 'Python', icon: PythonIcon },
-    { name: 'GoLang', icon: GoIcon },
-    { name: 'Terraform', icon: terraformIcon },
-    { name: 'Docker', icon: dockerIcon },
-    { name: 'Keras', icon: kerasIcon },
-    { name: 'sci-kit learn', icon: scikitlearnIcon },
-    { name: 'TensorFlow', icon: TensorFlowIcon },
-    { name: 'Pytorch', icon: PytorchIcon },
-    { name: 'ApacheHadoop', icon: ApacheHadoopIcon },
-    
-  ],
-  Tools_and_platforms: [
-    { name: 'Google Cloud', icon: googlecloudicon },
-    ,
+  CloudNativeTechnologies: [
     { name: 'AWS', icon: AWSIcon },
+    { name: 'GCP', icon: googlecloudicon },
     { name: 'Azure', icon: AzureIcon },
-    { name: 'Kubernetes', icon: KubernetesIcon },
-    { name: 'MongoDb', icon: MongoDbIcon },
-    { name: 'PostgresSQL', icon: PostgresSQLIcon },
+    { name: 'Jenkins', icon: JenkinsIcon },
+    { name: 'Docker', icon: dockerIcon },
+    { name: 'Kubernetes', icon: KubernetesIcon }, 
+    { name: 'Istio', icon: istioIcon },
+    { name: 'NGINX', icon: nginxIcon },
+    { name: 'HashiCorp Terraform', icon: terraformIcon },
     { name: 'GitLab', icon: GitLabIcon },
     { name: 'GitHub Actions', icon: GithubIcon },
-    { name: 'Jenkins', icon: JenkinsIcon },
-    { name: 'Web server', icon: nginxIcon },
+    { name: 'Apache Kafka', icon: kafkaicon },    
+    { name: 'gRPC', icon: grpcIcon },
+    { name: 'Elastic Stack', icon: elasticStack },
+  ],
+  ProgrammingLanguages: [
+    { name: 'Python', icon: PythonIcon },
+    { name: 'GoLang', icon: GoIcon },
+    { name: 'React', icon: reactIcon },
+    { name: 'R', icon: RIcon },   
+    { name: 'Java', icon: javaIcon },
+    { name: 'JavaScript', icon: javascript },
+
+
+
+  ],
+  Databases: [
+    { name: 'MongoDB', icon: MongoDbIcon },
+    { name: 'PostgreSQL', icon: PostgresSQLIcon },
+    { name: 'Redis', icon: redisIcon },
+    { name: 'MySQL', icon: mysql },
+
+
+  ],
+  DataScienceAndMachineLearning: [
+    { name: 'TensorFlow', icon: TensorFlowIcon },
+    { name: 'PyTorch', icon: PytorchIcon },
+    { name: 'Keras', icon: kerasIcon },
+    { name: 'scikit-learn', icon: scikitlearnIcon },
+    { name: 'Apache AirFlow', icon: ApaceAirflowIcon },
+    { name: 'Apache Hadoop', icon: ApacheHadoopIcon },
+    { name: 'pySpark', icon: sparkIcon },
+    { name: 'Langchain', icon: langchainIcon },
+
+
   ]
 };
 
+// Styled container for the Bento grid
 const SkillsContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Adjust number of columns */
+  grid-auto-rows: minmax(100px, auto); /* Minimum height for rows */
+  gap: 20px;
+  padding: 20px;
+
+  /* Define dynamic grid areas for a Bento-style layout */
+  & > :nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  & > :nth-child(2) {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  & > :nth-child(3) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  & > :nth-child(4) {
+    grid-column: span 3;
+    grid-row: span 1;
+  }
 `;
 
 const Skills = () => (
   <SkillsContainer>
-    {skills.Languages_and_frameworks.length > 0 && <SkillCard title="Languages and Frameworks" skills={skills.Languages_and_frameworks} />}
-    {skills.Tools_and_platforms.length > 0 && <SkillCard title="Tools and Platforms" skills={skills.Tools_and_platforms} />}
-
+    {Object.entries(skills).map(([category, skillList], index) => (
+      <SkillCard key={index} title={category.replace(/([A-Z])/g, ' $1')} skills={skillList} />
+    ))}
   </SkillsContainer>
 );
 

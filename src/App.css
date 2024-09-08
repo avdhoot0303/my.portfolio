@@ -45,3 +45,24 @@
 .macos-button-green {
   background: #28c940;
 }
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .wave-container {
+    position: relative;
+  }
+
+  .macos-buttons {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .content-bg {
+    height: 40vh;
+  }
+
+  #home {
+    padding: 20px;
+  }
+}

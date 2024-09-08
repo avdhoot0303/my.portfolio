@@ -5,7 +5,7 @@ import Projects from './Projects';
 import BlogList from './BlogList';
 import Skills from './Skills';
 import ResumeViewer from './ResumeViewer';
-import resumeFile from '../assets/Avdhoot_Resume_SWE.pdf';
+import resumeFile from '../assets/Avdhoot SWE Resume.pdf';
 import styled from 'styled-components';
 import PersonalSpace from './PersonalSpace';
 
@@ -31,7 +31,7 @@ const TabbedCard = () => {
   };
 
   return (
-    <Card bordered = {false} hoverable = {true} style={{ height: '100%', borderRadius:'18px', background: '#F6F5F2'  }}>
+    <Card bordered = {false} hoverable = {false} style={{ height: '100%', borderRadius:'18px', background: '#F6F5F2'  }}>
       <Tabs activeKey={activeTab} onChange={handleTabChange}>
         <TabPane tab="Projects" key="1">
           <ScrollableContent className={animationClass}>

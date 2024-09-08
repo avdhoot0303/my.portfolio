@@ -11,7 +11,10 @@ import PravinPatilLogo from '../assets/MSBTE logo.png';
 
 const StyledTimelineItem = styled(Timeline.Item)`
   transition: transform 0.3s ease, font-weight 0.3s ease;
+  cursor: default; /* Prevent cursor from changing to pointer */
+
   &:hover {
+    
     transform: scale(1.05);
     font-weight: bold;
     color: black
@@ -24,6 +27,7 @@ const TimelineItemWrapper = styled.div`
   padding: 16px;
   margin-bottom: 16px;
   transition: transform 0.4s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: default; /* Prevent cursor from changing to pointer */
 
   &:hover {
     transform: scale(1.03);
@@ -130,7 +134,8 @@ const achievementsItems = [
 ];
 
 const TimelineSection = ({ title, items }) => (
-  <Card title={title} style={{ marginBottom: '24px', borderRadius:"25px", overflow: 'hidden' }}>
+  <Card 
+  title={title} style={{ marginBottom: '24px', borderRadius:"25px", overflow: 'hidden' }}>
     <Timeline mode="alternate" >
       {items.map((item, index) => (
         <StyledTimelineItem

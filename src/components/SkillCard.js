@@ -5,25 +5,38 @@ import SkillItem from './SkillItem';
 
 const CardTitle = styled.h3`
   font-size: 18px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
+  text-align: center;
 `;
 
+// Dynamic grid layout for skills within each card
 const SkillsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
-  padding: 10px 0; /* Add padding for better spacing */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 16px;
+`;
+
+// Auto-adjusting card container
+const SkillCardContainer = styled(Card)`
+  margin: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 const SkillCard = ({ title, skills }) => (
-  <Card style={{ margin: 10 }}>
+  <SkillCardContainer>
     <CardTitle>{title}</CardTitle>
     <SkillsGrid>
       {skills.map((skill, index) => (
         <SkillItem key={index} name={skill.name} icon={skill.icon} />
       ))}
     </SkillsGrid>
-  </Card>
+  </SkillCardContainer>
 );
 
 export default SkillCard;

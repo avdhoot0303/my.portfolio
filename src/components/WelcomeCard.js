@@ -14,16 +14,36 @@ const CardTitle = styled.h1`
   font-size: 2.75rem;
   align-self: center;
   text-align: center; /* Center the title text */
-  font-family: 'Poppins', sans-serif; /* Apply the Poppins font */
-
+  font-family: 'Poppins', extra-bold; /* Apply the Poppins font */
 `;
+
+const Highlight = styled.span`
+  display: inline-block;
+  position: relative;
+  &:before {
+    content: ' ';
+    display: block;
+    height: 40%;
+    width: 100%;
+    margin-left: -3px;
+    margin-right: -3px;
+    position: absolute;
+    background: rgba(187, 181, 249, 0.3);
+    transform: rotate(2deg);
+    top: -1px;
+    // left: -0.5px;
+    border-radius: 20% 25% 20% 24%;
+    padding: 10px 3px 3px 10px;
+  }
+`;
+
 
 const IconWrapper = styled.div`
   margin-top: 16px;
   display: flex;
   flex-direction: row;
   gap: 16px;
-  justify-content: center; /* Center the icons horizontally */
+  justify-content: center;
   align-items: center;
 
   & > a {
@@ -31,24 +51,23 @@ const IconWrapper = styled.div`
     color: inherit;
     display: flex;
     align-items: center;
-    transition: transform 0.3s ease; /* Add transition for smooth effect */
+    transition: transform 0.3s ease;
   }
 
   & > a:hover {
-    transform: scale(2.1); /* Scale up the icon on hover */
+    transform: scale(2.1);
   }
 
   & > a:hover svg {
-    fill: #1890ff; /* Change color on hover */
+    fill: #1890ff;
   }
 
   svg {
-    width: 24px;
-    height: 24px;
-    transition: fill 0.1s, transform 0.1s; /* Add transition for color and transform */
+    width: 34px;
+    height: 34px;
+    transition: fill 0.1s, transform 0.1s;
   }
 `;
-
 
 const ScheduleButton = styled(Button)`
   margin-top: 16px;
@@ -57,15 +76,15 @@ const ScheduleButton = styled(Button)`
   border: none;
   border-radius: 18px;
   display: flex;
-  justify-content: center; /* Center the button horizontally */
+  justify-content: center;
   align-items: center;
 `;
 
 const CardContent = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center all content vertically */
-  text-align: center; /* Center the text */
+  align-items: center;
+  text-align: center;
 `;
 
 const WelcomeCard = () => {
@@ -83,7 +102,7 @@ const WelcomeCard = () => {
             if (index < Math.floor(Math.random() * iteration)) {
               return event.target.dataset.value[index];
             }
-            return letters[Math.floor(Math.random() * 26)];
+            return letters[Math.floor(Math.random() * 6)];
           })
           .join("");
 
@@ -92,7 +111,7 @@ const WelcomeCard = () => {
         }
 
         iteration += 1;
-      }, 30);
+      }, 18);
     };
 
     const nameElement = nameRef.current;
@@ -136,13 +155,10 @@ const WelcomeCard = () => {
           style={{ width: '65%', borderRadius: '6px', marginBottom: '12px' }}
         />
         <p className="typed-out drop-in-2">
-          <b><span>Just Another Internet Guy <br /></span></b>
-          Hi there! I'm{' '}
-          <span data-value="Avdhoot Patil">
-            Avdhoot Patil
-          </span>
-          , a Data Scientist and Software Engineer. Dive into my projects,
-          skills, and experiences to learn more about my journey.
+          <h3>Just Another Internet Guy <br /></h3>
+          <Highlight>Hi</Highlight> there! I'm{' '}
+          <b>Avdhoot Patil</b>, a <b>Data Scientist</b> and <b>Software Engineer</b>. Dive into my projects,
+          skills, and experiences to learn more about my journey. <br></br>I'm currently pursuing my <b>Master's in Data Science at Stony Brook University</b>. I'm also working with the <b>Research Foundation for SUNY as a Research Assistant </b> for Stony Brook Medicine's Long COVID project.
         </p>
         <Divider>Connect with me on my socials</Divider>
         <IconWrapper className="drop-in-2">
